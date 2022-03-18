@@ -1,0 +1,75 @@
+@use '../../styles/utils.scss' as *;
+
+.photographer {
+    display: flex;
+    justify-content: space-between;
+    min-height: 313px;
+    padding: 55px 45px;
+    margin-bottom: 20px;
+    background-color: $color-lightgrey;
+    @include mobile {
+        min-height: auto;
+        padding: 0 0;
+        margin: 30px 0 45px 0;
+        background-color: $color-white;
+    }
+    &_info {
+        display: flex;
+        width : fit-content;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-right: 80px;
+        @include mobile {
+            padding-right: 0px;
+            margin-right: -40px;
+        }
+        &_name { 
+            color: $color-secondary;
+            font-size: 4rem;
+            font-weight: 300;
+            @include mobile {
+                font-size: 2.25rem;
+            }
+        }
+        &_loc { 
+            color: $color-primary;
+            font-size: 1.5rem;
+            @include mobile {
+                font-size: 0.8125rem;
+            }    
+        }
+        &_tagline { 
+            color : $color-grey;
+            font-size: 1.125rem;
+            @include mobile {
+                font-size: 0.8125rem;
+            }     
+        }
+        &_tags {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    &_contact {
+        display: flex;
+        flex: 3;
+        padding-right: 60px;
+        @include mobile {
+            position: fixed;
+            z-index: 1;
+            bottom: 40px; left: 50%;
+            width: fit-content; height: 35px;
+            margin-left: -85px;
+        }
+    }
+    &_portrait {
+        display: flex;
+        width: 200px;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            @include portrait-img(0px);
+        }
+    }
+}

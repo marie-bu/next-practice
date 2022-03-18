@@ -1,0 +1,56 @@
+// Variables
+
+$color-primary : #901C1C ;
+$color-secondary : #D3573C ;
+$color-btn-dynamic : #DB8876;
+$color-grey : #525252 ;
+$color-lightgrey : #FAFAFA ;
+$color-white : #FFFFFF ;
+$color-black : #000000 ;
+
+// Mixins
+
+@mixin portrait-img ($margin:20px){
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: $margin;
+}
+
+@mixin tag-static {
+    padding: 3px 5px;
+    background-color: $color-white;
+    border : 0.5px solid lighten($color: $color-grey, $amount: 45%);
+    border-radius: 11px;
+}
+
+@mixin tag-dynamic {
+    background-color: $color-primary;
+    color: $color-white;
+    cursor: pointer;
+}
+
+@mixin btn-static ($width:170px, $height:69px, $radius:5px) {
+    width: $width;
+    height: $height;
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    font-size: 1.125rem;
+    font-weight: 700;
+    border-radius: $radius;
+}
+
+@mixin btn-dynamic {
+    background-color: $color-btn-dynamic;
+    color: $color-black;
+    cursor: pointer;
+}
+
+@mixin mobile {
+    @media all and (max-width:899px){
+        @content
+    }
+}

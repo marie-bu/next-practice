@@ -1,0 +1,75 @@
+@use '../../styles/utils.scss' as *;
+
+.sort {
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+
+    &_title {
+        color: $color-black;
+        font-size: 1.125rem;
+        font-weight: 700;
+    }
+
+    &_listbox {
+        position: absolute;
+        left: 150px;
+        z-index: 1;
+        margin-left: 15px;
+        margin-top: -18px;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        background-color: $color-primary;
+        border-radius: 5px;
+        box-shadow: 0 3px 10px $color-grey;
+
+        .toggle_listbox {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: $color-white;
+            background-color: $color-primary;
+            border: none;
+            font-size: 1.3rem;
+            line-height: 1.3rem;
+            cursor: pointer;
+            &:hover, &:focus {
+                font-size: 1.3rem;
+            }
+        }
+
+        .category {
+            text-align: left;
+            @include btn-static;
+
+            &:hover {
+                font-size: 1.2rem;
+            }
+            &:focus {
+                color: $color-btn-dynamic;
+            }
+        }
+
+        .show {
+            position: relative !important;
+            top: 2px !important;
+            z-index: 1 !important;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    }
+}
+
+.medias_grid {
+    position: relative;
+    top : 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 8%;
+    margin-top: 60px;
+}

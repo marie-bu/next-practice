@@ -1,0 +1,65 @@
+@use '../../styles/utils.scss' as *;
+
+.profile {
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+
+    h2 { 
+        color: $color-secondary;
+        font-size: 2.25rem;
+        text-align: center;
+    }
+
+    .location { 
+        color: $color-primary;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .tagline { 
+        color: $color-black;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .price { 
+        color: #757575;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        .portrait {
+            @include portrait-img;
+        }
+    }
+
+    p {
+        margin: 5px 0;
+
+        &:last-child{
+            margin : -2px 0;
+        }
+    }
+
+    &_tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        > * {
+            display: inline;
+            margin : 10px 5px 0 0;
+            @include tag-static;
+        }
+    }
+
+    &.hidden {
+        display: none;
+    }
+}

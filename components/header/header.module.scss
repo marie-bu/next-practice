@@ -1,0 +1,14 @@
+@use '../../styles/utils.scss' as *;
+
+.header {
+    padding: 50px 0;
+}
+
+.logoFisheye {
+    height: 50px;
+    width: 200px;
+    @include mobile {
+        height: 37.5px;
+        width: 150px;
+    }
+}
